@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemDetailLayoutID"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.activities.ItemDetailActivity"
+    tools:showIn="@layout/activity_item_detail">
+
+    <TextView
+        android:id="@+id/detsListTitleID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/list_title"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"/>
+
+    <EditText
+        android:id="@+id/detsItemTitleID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:text="@string/item_Title"
+        android:textSize="25sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="@+id/detsListTitleID"
+        app:layout_constraintTop_toBottomOf="@+id/detsListTitleID" />
+
+    <TextView
+        android:id="@+id/detsAssignedToID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/assignment"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/detsLocationID"
+        app:layout_constraintTop_toBottomOf="@+id/detsLocationID" />
+
+    <EditText
+        android:id="@+id/detsActualNameID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="32dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/assigned_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/detsAssignedToID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/detsAssignedToID" />
+
+    <TextView
+        android:id="@+id/detsDueOnID"
+        android:layout_width="79dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableBottom="@android:color/black"
+        android:drawableLeft="@android:color/black"
+        android:drawableRight="@android:color/black"
+        android:drawableTop="@android:color/black"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/due_date"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/detsItemTitleID"
+        app:layout_constraintTop_toBottomOf="@+id/detsItemTitleID" />
+
+    <EditText
+        android:id="@+id/detsActualDateID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/actual_date"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="@+id/detsDueOnID"
+        app:layout_constraintStart_toStartOf="@+id/detsActualLocationID" />
+
+    <TextView
+        android:id="@+id/detsLocationID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/location"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/detsDueOnID"
+        app:layout_constraintTop_toBottomOf="@+id/detsDueOnID" />
+
+    <EditText
+        android:id="@+id/detsActualLocationID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/actual_location"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/detsLocationID"
+        app:layout_constraintLeft_toRightOf="@+id/detsLocationID"
+        app:layout_constraintStart_toStartOf="@+id/detsActualNameID"
+        app:layout_constraintTop_toBottomOf="@+id/detsActualDateID"
+        app:layout_constraintVertical_bias="0.100000024" />
+
+    <TextView
+        android:id="@+id/detsToDoDetailsID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/item_details"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="@+id/detsCategoryID"
+        app:layout_constraintTop_toBottomOf="@+id/detsCategoryID" />
+
+    <EditText
+        android:id="@+id/detsActualDetailsID"
+        android:layout_width="@id/fab"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:ems="10"
+        android:hint="@string/to_do_details"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detsToDoDetailsID"
+        />
+
+    <Spinner
+        android:id="@+id/detsCategorySpinnerID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/detsCategoryID"
+        app:layout_constraintLeft_toRightOf="@+id/detsCategoryID"
+        app:layout_constraintStart_toEndOf="@+id/detsCategoryID"
+        app:layout_constraintStart_toStartOf="@id/detsActualNameID" />
+
+    <TextView
+        android:id="@+id/detsCategoryID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/category"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/detsAssignedToID"
+        app:layout_constraintTop_toBottomOf="@+id/detsAssignedToID" />
+
+</android.support.constraint.ConstraintLayout>

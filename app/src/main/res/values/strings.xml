@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">TodoListv1</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_item_list">ItemListActivity</string>
+    <string name="title_activity_item_detail">ItemDetailActivity</string>
+    <string name="due_date">Due On:</string>
+    <string name="location">Location:</string>
+    <string name="assignment">Assigned To:</string>
+    <string name="item_Title">Item Title</string>
+    <string name="list_title">List Title</string>
+    <string name="assigned_name">Name of Assignee</string>
+    <string name="actual_location">Enter a location or Address</string>
+    <string name="actual_date">Pick a Date</string>
+    <string name="item_details"><u>To Do Details</u></string>
+    <string name="to_do_details">Enter the details of the task</string>
+    <string name="category">Category:</string>
+</resources>
