@@ -28,7 +28,7 @@
         android:layout_height="62dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="?attr/colorButtonNormal"
+        app:backgroundTint="@android:color/black"
         app:srcCompat="@android:drawable/ic_menu_save" />
 
 </android.support.design.widget.CoordinatorLayout>
