@@ -1,5 +1,6 @@
 package o2pm.com.todov2.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -23,8 +24,9 @@ public class ItemListActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                setContentView(R.layout.activity_item_detail);
+                startActivity(new Intent(ItemListActivity.this, ItemDetailActivity.class));
                 Log.d("FAB1 Clicked", "Yes!");
+                finish();
 
             }
         });
