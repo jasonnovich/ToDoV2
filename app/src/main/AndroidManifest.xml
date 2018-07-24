@@ -20,6 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.ItemListActivity"
+            android:label="Item List"/>
+        <activity
+            android:name=".activities.ItemDetailActivity"
+            android:label="Item Details">
+        </activity>
     </application>
 
 </manifest>
