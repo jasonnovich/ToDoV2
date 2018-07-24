@@ -22,10 +22,10 @@
         </activity>
         <activity
             android:name=".activities.ItemListActivity"
-            android:label="Item List"/>
+            android:label="@string/to_do_items"/>
         <activity
             android:name=".activities.ItemDetailActivity"
-            android:label="Item Details">
+            android:label="@string/item_details">
         </activity>
     </application>
 
