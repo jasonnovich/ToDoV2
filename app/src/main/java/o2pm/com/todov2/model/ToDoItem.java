@@ -2,7 +2,7 @@ package o2pm.com.todov2.activities.model;
 
 public class ToDoItem {
 
-    private String listTitle
+    private String listTitle;
     private String itemTitle;
     private String dueOn;
     private String dueDate;
@@ -14,11 +14,15 @@ public class ToDoItem {
     private String dropdownCategory;
     private String toDoDetails;
     private String actualDetails;
+    private String percentageComplete;
+    private int actualPercentage;
     private int id;
 
+    // Empty Constructor
     public ToDoItem() {
     }
 
+    //Getters and Setters
     public String getListTitle() {
         return listTitle;
     }
@@ -121,5 +125,21 @@ public class ToDoItem {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getPercentageComplete() {
+        return percentageComplete;
+    }
+
+    public void setPercentageComplete(String percentageComplete) {
+        this.percentageComplete = percentageComplete;
+    }
+
+    public int getActualPercentage() {
+        return actualPercentage;
+    }
+
+    public void setActualPercentage(int actualPercentage) {
+        this.actualPercentage = actualPercentage;
     }
 }

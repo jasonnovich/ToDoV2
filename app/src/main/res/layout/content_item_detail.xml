@@ -154,4 +154,34 @@
         app:layout_constraintStart_toStartOf="@+id/detsAssignedToID"
         app:layout_constraintTop_toBottomOf="@+id/detsAssignedToID" />
 
+    <TextView
+        android:id="@+id/detsPercentCompleteID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/pecent_complete"
+        app:layout_constraintBottom_toBottomOf="@+id/detsToDoDetailsID"
+        app:layout_constraintStart_toEndOf="@+id/detsToDoDetailsID"
+        app:layout_constraintTop_toBottomOf="@+id/detsCategorySpinnerID"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <EditText
+        android:id="@+id/detsActualPercentID"
+        android:layout_width="95dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="2dp"
+        android:background="@null"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/detsPercentCompleteID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/detsPercentCompleteID" />
+
 </android.support.constraint.ConstraintLayout>
