@@ -27,7 +27,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     /**
-     * This is for a method in the class
+     *
      * @param db
      */
     @Override
@@ -116,5 +116,5 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public int getToDoListItemCount() {
         return 0;
     }
-    
+
 }
