@@ -88,9 +88,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /**
      * This method deletes a To Do Items from a specific list
      * @param listname
-     * @param id
      */
-    public void deleteToDoItem(String listName, int id) {
+    public void deleteToDoItem(String listName) {
+
+    }
+
+    /**
+     * This method adds a To Do List to the master database list.
+     * @param listName
+     */
+    public void addToDoList (String listName){
 
     }
 
@@ -111,7 +118,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     /*Make sure that when you create the database you are creating it with one entry which is the list name.
-When adding the actual to do list item, that would be an update of the database.
+When adding the actual to do list item, that would be an update o1f the database.
 Each change in the actual to do list item will mean an update of the item as well.
  */
 }
