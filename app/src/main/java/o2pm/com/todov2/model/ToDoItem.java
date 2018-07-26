@@ -1,4 +1,4 @@
-package o2pm.com.todov2.activities.model;
+package o2pm.com.todov2.model;
 
 public class ToDoItem {
 
