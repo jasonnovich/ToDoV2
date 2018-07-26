@@ -48,7 +48,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
+    /**
+     *
+     * @param toDoItem
+     */
     public void addToDoItem(ToDoItem toDoItem) {
+        
 
     }
 
