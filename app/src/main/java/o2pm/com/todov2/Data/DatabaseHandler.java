@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.List;
+
 import o2pm.com.todov2.model.ToDoItem;
 import o2pm.com.todov2.util.Constants;
 
@@ -49,12 +51,63 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     /**
-     *
+     * This method adds a To Do list item.
      * @param toDoItem
      */
     public void addToDoItem(ToDoItem toDoItem) {
-        
 
+    }
+
+    /**
+     * Ths method returns a To Do Item from the list based on the ID and the list name.
+     * @param listName
+     * @param id
+     * @return
+     */
+    public ToDoItem getToDoItem(String listName, int id) {
+        return null;
+    }
+
+    /**
+     * This method returns the entire list of To Do Items.
+     * @return
+     */
+    public List<ToDoItem> getAllToDoItems() {
+        return null;
+    }
+
+    /**
+     * This method updates and returns a To Do item
+     * @param toDoItem
+     * @return
+     */
+    public int updateToDoItem(ToDoItem toDoItem) {
+        return 0;
+    }
+
+    /**
+     * This method deletes a To Do Items from a specific list
+     * @param listname
+     * @param id
+     */
+    public void deleteToDoItem(String listName, int id) {
+
+    }
+
+    /**
+     * This method deletes a To Do list in its entirety
+     * @param listName
+     */
+    public void deleteToDoList(String listName){
+
+    }
+
+    /**
+     * This method returns the amount of items in a specific list
+     * @return
+     */
+    public int getToDoListItemCount() {
+        return 0;
     }
 
     /*Make sure that when you create the database you are creating it with one entry which is the list name.
