@@ -65,7 +65,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     /**
-     * This method adds a To Do list item.
+     *
      * @param toDoItem
      */
     public void addToDoItem(ToDoItem toDoItem) {

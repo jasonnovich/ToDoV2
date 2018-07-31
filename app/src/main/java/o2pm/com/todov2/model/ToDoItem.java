@@ -2,21 +2,24 @@ package o2pm.com.todov2.model;
 
 public class ToDoItem {
 
+    //Data variables - auto or user input
     private String listTitle;
     private String itemTitle;
-    private String dueOn;
     private String dueDate;
-    private String location;
     private String address;
-    private String assignedTo;
     private String assignee;
-    private String category;
     private String dropdownCategory;
     private String toDoDetails;
     private String actualDetails;
-    private String percentageComplete;
     private int actualPercentage;
     private int id;
+
+    //Static variables - textviews of the UI that describe the variables above
+    private String dueOn;
+    private String location;
+    private String assignedTo;
+    private String category;
+    private String percentageComplete;
 
     // Empty Constructor
     public ToDoItem() {
