@@ -35,13 +35,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_TO_DO_LIST_TABLE = "CREATE TABLE " + Constants.TABLE_NAME + "("
                 + Constants.KEY_ID + " INTEGER PRIMARY KEY," + Constants.LISTTITLE + " TEXT,"
-                + Constants.ITEMTITLE + " TEXT," + Constants.DUEON + " TEXT,"
-                + Constants.DUEDATE + " TEXT," + Constants.LOCATION + " TEXT,"
-                + Constants.ADDRESS + " TEXT," + Constants.ASSIGNEDTO + " TEXT,"
-                + Constants.ASSIGNEE + " TEXT," + Constants.CATEGORY + " TEXT,"
-                + Constants.DROPDOWNCATEGORY + " TEXT," + Constants.TODODETAILS + " TEXT,"
-                + Constants.ACTUALDETAILS + " TEXT," + Constants.PERCENTAGECOMPLETE + " TEXT,"
-                + Constants.ACTUALPERCENTAGE + " LONG");
+                + Constants.ITEMTITLE + " TEXT,"
+                + Constants.DUEDATE + " TEXT,"
+                + Constants.ADDRESS + " TEXT,"
+                + Constants.ASSIGNEE + " TEXT,"
+                + Constants.DROPDOWNCATEGORY + " TEXT,"
+                + Constants.ACTUALDETAILS + " TEXT,"
+                + Constants.ACTUALPERCENTAGE + " LONG;";
+        
+        db.execSQL(CREATE_TO_DO_LIST_TABLE);
 
     }
 
