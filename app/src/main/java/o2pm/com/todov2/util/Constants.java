@@ -8,22 +8,22 @@ public class Constants {
 
     //Table columns of user input
     public static final String KEY_ID = "id";               //ID in the table
-    public static final String LISTTITLE = null;            //User input - title of a list of To Do items
-    public static final String ITEMTITLE = null;            //User input - title of the to do item itself
-    public static final String DUEDATE = null;              //User input - actual due date selected from date picker
-    public static final String ADDRESS = null;              //User input - actual location of the to do item from google maps or manual
-    public static final String ASSIGNEE = null;             //user input - actual person assigned the task from contact picker
-    public static final String DROPDOWNCATEGORY = null;     //User input - actual drop down category as listed categories from google maps
-    public static final String ACTUALDETAILS = null;        //User input - actual details that the user enters for the to do item
+    public static final String LISTTITLE = "list_title";            //User input - title of a list of To Do items
+    public static final String ITEMTITLE = "item_title";            //User input - title of the to do item itself
+    public static final String DUEDATE = "due_date";              //User input - actual due date selected from date picker
+    public static final String ADDRESS = "address";              //User input - actual location of the to do item from google maps or manual
+    public static final String ASSIGNEE = "assignee";             //user input - actual person assigned the task from contact picker
+    public static final String DROPDOWNCATEGORY = "ddCategory";     //User input - actual drop down category as listed categories from google maps
+    public static final String ACTUALDETAILS = "actual_details";        //User input - actual details that the user enters for the to do item
     public static final int ACTUALPERCENTAGE = 0;           //User input - actual percentage complete in #
 
     //Static items in the UI
-    public static final String DUEON = null;
-    public static final String LOCATION = null;
-    public static final String ASSIGNEDTO = null;
-    public static final String TODODETAILS = null;
-    public static final String CATEGORY = null;
-    public static final String PERCENTAGECOMPLETE = null;
+//    public static final String DUEON = null;
+//    public static final String LOCATION = null;
+//    public static final String ASSIGNEDTO = null;
+//    public static final String TODODETAILS = null;
+//    public static final String CATEGORY = null;
+//    public static final String PERCENTAGECOMPLETE = null;
 
 
 

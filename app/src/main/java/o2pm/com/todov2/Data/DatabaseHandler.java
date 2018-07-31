@@ -42,7 +42,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + Constants.DROPDOWNCATEGORY + " TEXT,"
                 + Constants.ACTUALDETAILS + " TEXT,"
                 + Constants.ACTUALPERCENTAGE + " LONG;";
-        
+
         db.execSQL(CREATE_TO_DO_LIST_TABLE);
 
     }
