@@ -94,7 +94,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      */
     public ToDoItem getToDoItem(String listName, int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-
+//TODO -  put code here for the selection of an item based on item name within the list
 
         return null;
     }
