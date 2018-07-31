@@ -72,9 +72,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        //Put code here to add a to do item.
-        //Use "values.put(Constants.<column>, object.getter
-        //Then insert the row using this command: db.insert(Constants.TABLE_NAME, null, values);
+        values.put(Constants.LISTTITLE, toDoItem.getListTitle());
+        values.put(Constants.ITEMTITLE, toDoItem.getItemTitle());
+        values.put(Constants.DUEDATE, toDoItem.getDueDate());
+        values.put(Constants.ADDRESS, toDoItem.getAddress());
+        values.put(Constants.ASSIGNEE, toDoItem.getAssignee());
+        values.put(Constants.DROPDOWNCATEGORY, toDoItem.getDropdownCategory());
+        values.put(Constants.ACTUALDETAILS, toDoItem.getActualDetails());
+        values.put(Constants.ACTUALPERCENTAGE, toDoItem.getActualPercentage());
+
+        //insert row
+
+        db.insert(Constants.TABLE_NAME, null, values);
     }
 
     /**
