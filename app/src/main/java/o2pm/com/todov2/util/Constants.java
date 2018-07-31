@@ -8,19 +8,19 @@ public class Constants {
 
     //Table columns
     public static final String KEY_ID = "id";
-    private static final String listTitle = null;
-    private static final String itemTitle = null;
-    private static final String dueOn = null;
-    private static final String dueDate = null;
-    private static final String location = null;
-    private static final String address= null;
-    private static final String assignedTo = null;
-    private static final String assignee = null;
-    private static final String category = null;
-    private static final String dropdownCategory = null;
-    private static final String toDoDetails = null;
-    private static final String actualDetails = null;
-    private static final String percentageComplete = null;
-    private static final int actualPercentage = 0;
+    public static final String LISTTITLE = null;
+    public static final String ITEMTITLE = null;
+    public static final String DUEON = null;
+    public static final String DUEDATE = null;
+    public static final String LOCATION = null;
+    public static final String ADDRESS = null;
+    public static final String ASSIGNEDTO = null;
+    public static final String ASSIGNEE = null;
+    public static final String CATEGORY = null;
+    public static final String DROPDOWNCATEGORY = null;
+    public static final String TODODETAILS = null;
+    public static final String ACTUALDETAILS = null;
+    public static final String PERCENTAGECOMPLETE = null;
+    public static final int ACTUALPERCENTAGE = 0;
 
 }

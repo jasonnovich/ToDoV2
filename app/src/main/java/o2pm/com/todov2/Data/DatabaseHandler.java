@@ -1,5 +1,6 @@
 package o2pm.com.todov2.Data;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -27,11 +28,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     /**
-     *
+     * This method is used to create the database
      * @param db
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
+        String CREATE_TO_DO_LIST_TABLE = "CREATE TABLE " + Constants.TABLE_NAME + "("
+                + Constants.KEY_ID + " INTEGER PRIMARY KEY," + Constants.LISTTITLE + " TEXT,"
+                + Constants.ITEMTITLE + " TEXT," + Constants.DUEON + " TEXT,"
+                + Constants.DUEDATE + " TEXT," + Constants.LOCATION + " TEXT,"
+                + Constants.ADDRESS + " TEXT," + Constants.ASSIGNEDTO + " TEXT,"
+                + Constants.ASSIGNEE + " TEXT," + Constants.CATEGORY + " TEXT,"
+                + Constants.DROPDOWNCATEGORY + " TEXT," + Constants.TODODETAILS + " TEXT,"
+                + Constants.ACTUALDETAILS + " TEXT," + Constants.PERCENTAGECOMPLETE + " TEXT,"
+                + Constants.ACTUALPERCENTAGE + " LONG");
 
     }
 
@@ -40,14 +50,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * <dt><span class="strong">Heading 1</span></dt><dd>There is a line break.</dd>
      * <dt><span class="strong">Heading 2</span></dt><dd>There is a line break.</dd>
      * </dl>
-     * Laura is the greatest techwriter in the world!!
+     *
      * @param db
      * @param oldVersion
      * @param newVersion
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + Constants.TABLE_NAME);
 
+        onCreate(db);
     }
 
     /**
@@ -55,7 +67,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * @param toDoItem
      */
     public void addToDoItem(ToDoItem toDoItem) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
 
+        //Put code here to add a to do item.
+        //Use "values.put(Constants.<column>, object.getter
+        //Then insert the row using this command: db.insert(Constants.TABLE_NAME, null, values);
     }
 
     /**
@@ -65,6 +82,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * @return
      */
     public ToDoItem getToDoItem(String listName, int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+
         return null;
     }
 
@@ -73,6 +93,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * @return
      */
     public List<ToDoItem> getAllToDoItems() {
+        SQLiteDatabase db = this.getReadableDatabase();
         return null;
     }
 
@@ -82,6 +103,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * @return
      */
     public int updateToDoItem(ToDoItem toDoItem) {
+
         return 0;
     }
 
