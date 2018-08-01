@@ -220,21 +220,31 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
 //    These methods are for adding and deleting entire to do lists from the database
-//
-//    /**
-//     * This method adds a To Do List title to the database.
-//     * @param listName
-//     */
-//    public void addToDoList (String listName){
-//
-//    }
-//
-//    /**
-//     * This method deletes a To Do list in its entirety from the database
-//     * @param listName
-//     */
-//    public void deleteToDoList(String listName){
-//
-//    }
+
+    /**
+     * This method adds a To Do List title to the database.
+     * @param toDoItem
+     */
+    public void addToDoList (ToDoItem toDoItem){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(Constants.LISTTITLE, toDoItem.getListTitle());
+
+        db.insert(Constants.TABLE_NAME, null, values);
+
+    }
+
+    /**
+     * This method deletes a To Do list in its entirety from the database
+     * @param toDoItem
+     */
+    public void deleteToDoList(ToDoItem toDoItem){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(Constants.TABLE_NAME, Constants.LISTTITLE + "=?",
+                new String[] {Constants.LISTTITLE});
+
+        db.close();
+    }
 
 }
