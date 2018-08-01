@@ -43,6 +43,23 @@ public class ItemDetailActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        //TextViews for user input
+        listTitle = findViewById(R.id.detsListTitleID);
+        itemTitle = findViewById(R.id.detsItemTitleID);
+        dueDate = findViewById(R.id.detsActualDateID);
+        address = findViewById(R.id.detsActualLocationID);
+        assignee = findViewById(R.id.detsActualNameID);
+        dropdownCategory = findViewById(R.id.detsCategorySpinnerID); //Todo - figure this one out as well
+        toDoDetails = findViewById(R.id.detsActualDetailsID);
+        actualPercentage = findViewById(R.id.detsActualPercentID); //Todo - figure out why integer wont be displayed
+
+        //Text views for static UI data
+        dueOn = findViewById(R.id.detsDueOnID);
+        location = findViewById(R.id.detsLocationID);
+        assignedTo = findViewById(R.id.detsAssignedToID);
+        category = findViewById(R.id.detsCategoryID);
+        percentageComplete = findViewById(R.id.detsPercentCompleteID);
+
     }
 
 }
