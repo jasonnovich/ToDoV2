@@ -45,7 +45,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + Constants.ASSIGNEE + " TEXT,"
                 + Constants.DROPDOWNCATEGORY + " TEXT,"
                 + Constants.ACTUALDETAILS + " TEXT,"
-                + Constants.ACTUALPERCENTAGE + " LONG;";
+                + Constants.ACTUALPERCENTAGE + " INTEGER);";
 
         db.execSQL(CREATE_TO_DO_LIST_TABLE);
 
@@ -92,17 +92,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     /**
      * Ths method returns a To Do Item from the list based on the ID and the list name.
-     * @param listName
      * @param id
      * @return
      */
-    public ToDoItem getToDoItem(String listName, int id) {
+    public ToDoItem getToDoItem(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(Constants.TABLE_NAME, new String[] {Constants.LISTTITLE,
                 Constants.ITEMTITLE, Constants.DUEDATE, Constants.ADDRESS,
                 Constants.ASSIGNEE,Constants.DROPDOWNCATEGORY, Constants.ACTUALDETAILS,
-                String.valueOf(Constants.ACTUALPERCENTAGE)}, Constants.LISTTITLE + "=?", + " AND "
+                String.valueOf(Constants.ACTUALPERCENTAGE)}, Constants.LISTTITLE + "=?" +" AND "
                 + Constants.ITEMTITLE + "=?",
                 new String[] {Constants.LISTTITLE, Constants.ITEMTITLE}, null,
                 null, null, null);
