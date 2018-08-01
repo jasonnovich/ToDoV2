@@ -104,10 +104,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[] {Constants.LISTTITLE, Constants.ITEMTITLE}, null,
                 null, null, null);
 
-        if (cursor != null) {
+        if (cursor != null)
             cursor.moveToFirst();
-        }
 
+            ToDoItem toDoItem = new ToDoItem();
+            //Todo - set the items in the list - similar to what is in the grocer list example
 
     }
 
