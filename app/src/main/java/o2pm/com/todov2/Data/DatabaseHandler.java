@@ -2,6 +2,7 @@ package o2pm.com.todov2.Data;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -94,9 +95,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      */
     public ToDoItem getToDoItem(String listName, int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-//TODO -  put code here for the selection of an item based on item name within the list
 
-        return null;
+        Cursor cursor = db.query(Constants.TABLE_NAME, new String[] {Constants.LISTTITLE,
+                Constants.ITEMTITLE, Constants.DUEDATE, Constants.ADDRESS,
+                Constants.ASSIGNEE,Constants.DROPDOWNCATEGORY, Constants.ACTUALDETAILS,
+                Constants.ACTUALPERCENTAGE}, Constants.LISTTITLE + "=?", + " AND "
+                + Constants.ITEMTITLE + "=?",
+                new String[] {Constants.LISTTITLE, Constants.ITEMTITLE}, null,
+                null, null, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+
     }
 
     /**
