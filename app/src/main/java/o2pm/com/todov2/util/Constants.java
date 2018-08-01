@@ -15,7 +15,7 @@ public class Constants {
     public static final String ASSIGNEE = "assignee";             //user input - actual person assigned the task from contact picker
     public static final String DROPDOWNCATEGORY = "ddCategory";     //User input - actual drop down category as listed categories from google maps
     public static final String ACTUALDETAILS = "actual_details";        //User input - actual details that the user enters for the to do item
-    public static final int ACTUALPERCENTAGE = 0;           //User input - actual percentage complete in #
+    public static int ACTUALPERCENTAGE;           //User input - actual percentage complete in #
 
 /*    Static items in the UI
     public static final String DUEON = null;
