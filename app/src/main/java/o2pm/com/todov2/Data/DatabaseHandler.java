@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -119,7 +120,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             toDoItem.setDropdownCategory(cursor.getString(cursor.getColumnIndex(Constants.DROPDOWNCATEGORY)));
             toDoItem.setActualPercentage(cursor.getInt(cursor.getColumnIndex(String.valueOf(Constants.ACTUALPERCENTAGE))));
 
-
             //Set the formatted due date
             DateFormat dateFormat = DateFormat.getDateInstance();
             String formattedDate = dateFormat.format(new Date(cursor.getLong(cursor.getColumnIndex(Constants.DUEDATE))));
@@ -130,12 +130,44 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     /**
-     * This method returns the entire list of To Do Items.
+     * This method returns the entire list of To Do Items from a particular list.
      * @return
      */
     public List<ToDoItem> getAllToDoItems() {
         SQLiteDatabase db = this.getReadableDatabase();
-        return null;
+
+        List<ToDoItem> toDoItemList = new ArrayList<>();
+
+        Cursor cursor = db.query(Constants.TABLE_NAME, new String[] {Constants.LISTTITLE,
+                        Constants.ITEMTITLE, Constants.DUEDATE, Constants.ADDRESS,
+                        Constants.ASSIGNEE,Constants.DROPDOWNCATEGORY, Constants.ACTUALDETAILS,
+                        String.valueOf(Constants.ACTUALPERCENTAGE)}, Constants.LISTTITLE + "=?",
+                new String[] {Constants.LISTTITLE, Constants.ITEMTITLE}, null,
+                null, null, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                ToDoItem toDoItem = new ToDoItem();
+                toDoItem.setId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(Constants.KEY_ID))));
+                toDoItem.setListTitle(cursor.getString(cursor.getColumnIndex(Constants.LISTTITLE)));
+                toDoItem.setItemTitle(cursor.getString(cursor.getColumnIndex(Constants.ITEMTITLE)));
+                toDoItem.setActualDetails(cursor.getString(cursor.getColumnIndex(Constants.ACTUALDETAILS)));
+                toDoItem.setAddress(cursor.getString(cursor.getColumnIndex(Constants.ADDRESS)));
+                toDoItem.setAssignee(cursor.getString(cursor.getColumnIndex(Constants.ASSIGNEE)));
+                toDoItem.setDropdownCategory(cursor.getString(cursor.getColumnIndex(Constants.DROPDOWNCATEGORY)));
+                toDoItem.setActualPercentage(cursor.getInt(cursor.getColumnIndex(String.valueOf(Constants.ACTUALPERCENTAGE))));
+
+                //Set the formatted due date
+                DateFormat dateFormat = DateFormat.getDateInstance();
+                String formattedDate = dateFormat.format(new Date(cursor.getLong(cursor.getColumnIndex(Constants.DUEDATE))));
+                toDoItem.setDueDate(formattedDate);
+
+                //Add to do item to the list
+                toDoItemList.add(toDoItem);
+
+            }while (cursor.moveToNext());
+        }
+        return toDoItemList;
     }
 
     /**
