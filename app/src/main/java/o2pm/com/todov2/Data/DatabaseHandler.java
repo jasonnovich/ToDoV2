@@ -176,20 +176,34 @@ public class DatabaseHandler extends SQLiteOpenHelper {
      * @return
      */
     public int updateToDoItem(ToDoItem toDoItem) {
+        SQLiteDatabase db = this.getWritableDatabase();
 
-        return 0;
+        ContentValues values = new ContentValues();
+
+        values.put(Constants.LISTTITLE, toDoItem.getListTitle());
+        values.put(Constants.ITEMTITLE, toDoItem.getItemTitle());
+        values.put(Constants.DUEDATE, toDoItem.getDueDate());
+        values.put(Constants.ADDRESS, toDoItem.getAddress());
+        values.put(Constants.ASSIGNEE, toDoItem.getAssignee());
+        values.put(Constants.DROPDOWNCATEGORY, toDoItem.getDropdownCategory());
+        values.put(Constants.ACTUALDETAILS, toDoItem.getActualDetails());
+        values.put(String.valueOf(Constants.ACTUALPERCENTAGE), toDoItem.getActualPercentage());
+
+        //Update a row in the database
+        return db.update(Constants.TABLE_NAME, values, Constants.KEY_ID + "=?",
+                new String[] {String.valueOf(toDoItem.getId())});
     }
 
     /**
      * This method deletes a To Do Items from a specific list
      * @param listname
      */
-    public void deleteToDoItem(String listName) {
+    public void deleteToDoItem(int id) {
 
     }
 
     /**
-     * This method adds a To Do List to the master database list.
+     * This method adds a To Do List title to the database.
      * @param listName
      */
     public void addToDoList (String listName){
