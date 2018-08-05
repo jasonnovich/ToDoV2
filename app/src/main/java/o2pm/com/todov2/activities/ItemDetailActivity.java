@@ -49,16 +49,31 @@ public class ItemDetailActivity extends AppCompatActivity {
         dueDate = findViewById(R.id.detsActualDateID);
         address = findViewById(R.id.detsActualLocationID);
         assignee = findViewById(R.id.detsActualNameID);
-        dropdownCategory = findViewById(R.id.detsCategorySpinnerID); //Todo - figure this one out as well
+        dropdownCategory = findViewById(R.id.detsCategoryID); //Todo - figure this one out as well
         toDoDetails = findViewById(R.id.detsActualDetailsID);
-        actualPercentage = findViewById(R.id.detsActualPercentID); //Todo - figure out why integer wont be displayed
+        //actualPercentage = findViewById(R.id.detsActualPercentID); //Todo - figure out why integer wont be displayed
+
 
         //Text views for static UI data
         dueOn = findViewById(R.id.detsDueOnID);
         location = findViewById(R.id.detsLocationID);
         assignedTo = findViewById(R.id.detsAssignedToID);
-        category = findViewById(R.id.detsCategoryID);
+        category = findViewById(R.id.detsCategorySpinnerID);
         percentageComplete = findViewById(R.id.detsPercentCompleteID);
+
+        Bundle bundle = getIntent().getExtras();
+
+        if ( bundle != null){
+            listTitle.setText(bundle.getString("list_title"));
+            itemTitle.setText(bundle.getString("item_title"));
+            dueDate.setText(bundle.getString("due_date"));
+            address.setText(bundle.getString("address"));
+            assignee.setText(bundle.getString("assignee"));
+            dropdownCategory.setText(bundle.getString("Category"));
+            toDoDetails.setText(bundle.getString("Details"));
+            actualPercentage = bundle.getInt("Percentage");
+            toDoDetails.setText(bundle.getString("To Do Details"));
+        }
 
     }
 
